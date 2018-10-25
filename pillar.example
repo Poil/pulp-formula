@@ -1,0 +1,28 @@
+#
+# For default values see map.jinja file
+#
+
+pulp:
+  server:
+    enabled: true
+    filesystems:
+      enabled: true
+      vg_name: sys
+      pulp_size: 50G
+      mongo_size: 15G
+      fs_type: xfs
+    admin:
+      enabled: true
+      hostname: pulp.example.com
+      verify_ssl: true
+      username: admin
+      password: admin
+    repositories: 
+      - id: centos-7-os
+        type: rpm
+        feed: http://mirror.0x.sg/centos/7.5.1804/os/x86_64/
+        relative_url: centos/7/os
+      - id: epel-7
+        type: rpm
+        feed: http://sg.fedora.ipserverone.com/epel/7/x86_64/
+        relative_url: epel/7
